@@ -1,0 +1,176 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial;
+  
+}
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background-color: #111;
+   background: url("https://indiastandswithmyanmar.org/assets/imgs/gayatri-malhotra-c1s02_3mO-o-unsplash.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: 100% 100%;
+}
+
+.right {
+  right: 0;
+  background-color: #E7E9EB;
+  background: url("https://png.pngtree.com/thumb_back/fw800/back_our/20190628/ourmid/pngtree-black-white-ink-watercolor-background-image_275987.jpg");
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+ .fo{
+                margin-top: -30%;
+                background-color:#E7E9EB;;
+                height: 500px;
+                width: 500px;
+                background-image: url(" assets/2.jpg");
+
+                
+                display: block;
+
+            }
+ form{
+                padding: 4%;
+                text-align: left;
+                line-height: 40px;
+                padding-left: 130px;
+            }
+            input 
+            {
+              background-color: #FFFFFF;
+            }
+
+button:hover{
+    background-color: cornflowerblue;
+}
+
+</style>
+</head>
+<body>
+
+<div class="split left">
+  <div class="centered">
+    
+  </div>
+</div>
+
+<div class="split right">
+  
+    
+      
+        
+        <form action="/report-complain" method="POST">
+            <label for=name>Name:</label>
+            <input type="text" name="name"> <br>
+           
+            <label for=phone>Contact No.:</label>
+            <input type="text" name="phone"><br>
+           
+            <label for=address>Address:</label>
+            <input type="text" name="address"><br>
+           
+            <label for=name>Offence Type:</label>
+            <input type="checkbox" id="dv" name="offence" value="Drug Violation">
+            <label for=dv>Drug Violation</label>
+            <input type="checkbox" id="larc" name="offence" value="Larceny">
+            <label for=larc>Larceny</label>
+            <input type="checkbox" id="sa" name="offence" value="Simple Assault">
+            <label for=sa>Simple Assault</label>
+            <input type="checkbox" id="vand" name="offence" value="Vandalism">
+            <label for=vand>Vandalism</label>
+            <input type="checkbox" id="aa" name="offence" value="Aggravated Assault">
+            <label for=aa>Aggravated Assault</label>
+            <input type="checkbox" id="rb" name="offence" value="Residential Burglary">
+            <label for=rb>Residential Burglary</label>
+            <input type="checkbox" id="at" name="offence" value="Auto Theft">
+            <label for=at>Auto Theft</label>
+            <input type="checkbox" id="mvar" name="offence" value="Motor Vehicle Accident Response">
+            <label for=mvar>Motor Vehicle Accident Response</label>
+            <input type="checkbox" id="rob" name="offence" value="Robbery">
+            <label for=rob>Robbery</label>
+            <input type="checkbox" id="haras" name="offence" value="Harassment">
+            <label for=haras>Harassment</label>
+            <input type="checkbox" id="vd" name="offence" value="Verbal Disputes">
+            <label for=vd>Verbal Disputes</label>
+            <input type="checkbox" id="hom" name="offence" value="Homicide">
+            <label for=hom>Homicide</label>
+
+
+
+
+            
+            <br>
+            <label for=desc>Description of Incident:</label><br>
+            <textarea type="text" name="desc" rows="5" cols="60">...</textarea>
+           <br>
+            <label for=date>Date of Incident:</label>
+            <input type="text" name="date">
+           <br>
+            <label for=time>Time at which incident took place (approx.):</label>
+            <input type="text" name="time">
+           <br>
+            <label for=long>LocationX:</label>
+            <input type="text" id="lat" name="long">
+           <br>
+            <label for=lat>LocationY</label>
+            <input type="text" id="long" name="lat">
+           <br>
+           <button onclick="getLocation()">Get Location</button>
+            <center><button type="submit" onclick="myAlert()" >REPORT</button></center>
+        
+
+        </form>
+        
+    
+  
+</div>
+<script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+       function myAlert(){
+          alert("Your complaint has been lodged sucessfully!");
+        }
+        var x = getElementById('lat');
+        var y = getElementById('long');
+        function getLocation(){
+          if(navigator.geolocation)
+          {
+            navigator.geolocation.getCurrentPosition(showPosition);
+          }
+        }
+        function showPosition(position)
+        {
+          x.innerHTML = position.coords.latitude; 
+          y.innerHTML = position.coords.longitude;
+        }
+            
+            
+</script>
+     
+</body>
+</html> 
